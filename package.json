@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "babel-node src/index",
-    "dev": "nodemon --exec babel-node src/index.js"
+    "dev": "nodemon --exec babel-node src/index.js",
+    "pub": "np --no-2fa"
   },
   "bin": {
     "@PawFV/torcazas-create": "bin/torcazas-create",
