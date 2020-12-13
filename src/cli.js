@@ -1,12 +1,11 @@
 import arg from 'arg'
 import fs from 'fs-extra'
 import inquirer from 'inquirer'
-import config from './config'
+import path from 'path'
 import { createProject } from './main'
-
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
-    {   
+    {
       '--git': Boolean,
       '--yes': Boolean,
       '--install': Boolean,
@@ -38,7 +37,9 @@ async function promptForMissingOptions(options) {
       type: 'list',
       name: 'template',
       message: 'Please choose which project template to use',
-      choices: fs.readdirSync(config.templatesPath)
+      choices: fs.readdirSync(
+        path.join(path.dirname(require.main.filename), '../templates')
+      )
     })
   }
 
@@ -62,6 +63,5 @@ async function promptForMissingOptions(options) {
 export async function cli(args) {
   let options = parseArgumentsIntoOptions(args)
   options = await promptForMissingOptions(options)
-  console.log('TCL: cli -> options', options)
   await createProject(options)
 }
