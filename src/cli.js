@@ -2,16 +2,19 @@ import arg from 'arg'
 import fs from 'fs-extra'
 import inquirer from 'inquirer'
 import path from 'path'
-import { createProject } from './main'
+import { addTemplate, installTemplate } from './main'
+
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
     {
       '--git': Boolean,
       '--yes': Boolean,
       '--install': Boolean,
+      '--add': Boolean,
       '-g': '--git',
       '-y': '--yes',
-      '-i': '--install'
+      '-i': '--install',
+      '-a': '--add'
     },
     {
       argv: rawArgs.slice(2)
@@ -21,7 +24,8 @@ function parseArgumentsIntoOptions(rawArgs) {
     skipPrompts: args['--yes'] || false,
     git: args['--git'] || false,
     template: args._[0],
-    runInstall: args['--install'] || false
+    runInstall: args['--install'] || true,
+    add: args['--add'] || false
   }
 }
 
@@ -62,6 +66,7 @@ async function promptForMissingOptions(options) {
 
 export async function cli(args) {
   let options = parseArgumentsIntoOptions(args)
+  if (options.add) return addTemplate()
   options = await promptForMissingOptions(options)
-  await createProject(options)
+  await installTemplate(options)
 }
