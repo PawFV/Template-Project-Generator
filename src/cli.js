@@ -48,7 +48,7 @@ async function promptForMissingOptions(options) {
       type: 'confirm',
       name: 'git',
       message: 'Initialize a Git repository?',
-      default: false
+      default: true
     })
   }
 
