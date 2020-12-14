@@ -15,6 +15,7 @@ async function copyTemplateFiles(options) {
   })
 }
 
+
 async function initGit(options) {
   const result = await execa('git', ['init'], {
     cwd: options.targetDirectory
@@ -27,9 +28,10 @@ async function initGit(options) {
 }
 
 export async function createProject(options) {
+  const targetDir = path.resolve(process.cwd(), options.template.toLowerCase())
   options = {
     ...options,
-    targetDirectory: options.targetDirectory || process.cwd()
+    targetDirectory: options.targetDirectory || targetDir
   }
 
   const templateDir = path.join(
