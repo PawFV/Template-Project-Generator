@@ -1,0 +1,42 @@
+@mixin flex($justify: center, $align: false, $direction: false) {
+  display: flex;
+  justify-content: $justify;
+
+  @if $direction {
+    flex-direction: column;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if not $align {
+    align-items: center;
+  }
+}
+
+@mixin posAbsolute($top: 50%, $left: 50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+@mixin posFixed($top: 50%, $left: 50%) {
+  position: fixed;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@mixin bgImg($imgUrl, $position: center) {
+  background-image: url('#{$imgUrl}');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: $position;
+}
+
+@mixin overlay() {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
