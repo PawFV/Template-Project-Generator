@@ -2,12 +2,12 @@
 
 ## Install
 
-`$ npm install -g torcazas-create`
+`$ npm install -g pb-create`
 
 ## Usage
 
 ```console
-torcazas-create
+pb-create
 ```
 
 ### Options
