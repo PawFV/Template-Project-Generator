@@ -1,10 +1,8 @@
-import Button from '@bit/pawfv.button-component.button'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
-Vue.component('Button', Button)
 Vue.config.productionTip = false
 
 new Vue({
