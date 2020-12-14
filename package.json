@@ -1,5 +1,5 @@
 {
-  "name": "torcazas-create",
+  "name": "pb-create",
   "version": "1.0.10",
   "description": "",
   "main": "src/index.js",
@@ -9,8 +9,8 @@
     "pub": "np --no-2fa"
   },
   "bin": {
-    "@PawFV/torcazas-create": "bin/torcazas-create",
-    "torcazas-create": "bin/torcazas-create"
+    "@PawFV/pb-create": "bin/pb-create",
+    "pb-create": "bin/pb-create"
   },
   "publishConfig": {
     "access": "public"
@@ -39,6 +39,6 @@
   },
   "keywords": [
     "cli",
-    "torcazas-create"
+    "pb-create"
   ]
 }
