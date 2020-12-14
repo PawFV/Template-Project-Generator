@@ -1,5 +1,6 @@
 # Template project generator.
-
+## Description
+Command-line interface (cli) tool, to help you save/load & install projects.
 ## Install
 
 `$ npm install -g pb-create`
@@ -12,7 +13,8 @@ pb-create
 
 ### Options
 
-```powershell
--g initializes git repository
--i installs dependencies
-```
+| Option      | alias | Description                | default |
+| ----------- | ----- | :------------------------- | ------: |
+| `--git`     | `-g`  | Initializes git repository |   false |
+| `--install` | `-i`  | Installs npm dependencies  |    true |
+| `--add`     | `-a`  | Adds a new template        |    true |
