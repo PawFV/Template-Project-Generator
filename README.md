@@ -1,4 +1,4 @@
-# Template project generator.
+# PawFV Template project generator.
 ## Description
 Command-line interface (cli) tool, to help you save/load & install projects.
 ## Install
