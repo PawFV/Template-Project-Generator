@@ -7,8 +7,8 @@ Command-line interface (cli) tool, to help you save/load & install projects.
 
 ## Usage
 
-```console
-pb-create
+```bash
+$ pb-create
 ```
 
 ## Options
